@@ -1,0 +1,47 @@
+{
+  "name": "MoodGuard",
+  "version": "1.0.0",
+  "description": "This extension uses the power of machine learning to interpret image sentiments from social media.",
+  "icons": {
+    "16": "images/icon16.png",
+    "32": "images/icon32.png",
+    "64": "images/icon64.png",
+    "128": "images/icon128.png"
+  },
+  "permissions": [
+    "activeTab",
+    "storage",
+    "tabs",
+    "webRequest",
+    "webRequestBlocking",
+    "http://*/*",
+    "https://*/*"
+  ],
+  "manifest_version": 2,
+  "author": "Jake Intravaia",
+  "action": {
+    "default_popup": "popup.html",
+    "default_title": "MoodGuard"
+  },
+  "background": {
+    "scripts": [ "jquery.min.js", "background.js" ],
+    "persistent": true
+  },
+  "browser_action": {
+    "default_icon": {
+      "16": "images/icon16.png",
+      "32": "images/icon32.png",
+      "64": "images/icon64.png",
+      "128": "images/icon128.png"
+    },
+    "default_title": "MoodGuard",
+    "default_popup": "popup.html",
+    "default_icon": "images/icon64.png"
+  },
+  "content_scripts": [
+    {
+      "matches": [ "<all_urls>" ],
+      "js": [ "jquery.min.js", "content.js" ]
+    }
+  ]
+}
